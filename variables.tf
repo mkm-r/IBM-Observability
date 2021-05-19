@@ -52,10 +52,12 @@ variable "TF_VERSION" {
 }
 
 output "output_logdna_instance_id" {
+  is_resource = true
   value = module.logdna_instance.logdna_instance_guid
 }
 
 
 output "output_at_instance_id" {
+  is_resource = true
   value = module.activity-tracker_instance.tracker_guid
 }
