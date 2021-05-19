@@ -48,7 +48,15 @@ variable "observability_resource_key_name" {
 variable "TF_VERSION" {
   default     = "0.13"
   description = "terraform engine version to be used in schematics"
+}
 
+
+variable "output_logdna_instance_id" {
+  description = "terraform engine version to be used in schematics"
+}
+
+variable "output_at_instance_id" {
+  description = "terraform engine version to be used in schematics"
 }
 
 output "logdna_instance_id" {
