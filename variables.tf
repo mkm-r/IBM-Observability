@@ -17,7 +17,7 @@ variable "observability_instance_name" {
 }
 variable "region" {
   description = "Name of the region or location (eg. us-south, eu-de)"
-  default     = "us-south"
+  default     = "us-east"
 }
 
 variable "observability_resource_key_role" {
@@ -51,13 +51,27 @@ variable "TF_VERSION" {
 
 }
 
-output "output_logdna_instance_id" {
-  is_resource = true
+output "logdna_instance_id" {
   value = module.logdna_instance.logdna_instance_guid
 }
 
 
-output "output_at_instance_id" {
-  is_resource = true
+output "at_instance_id" {
   value = module.activity-tracker_instance.tracker_guid
+}
+
+output "logdna_instance" {
+  value = {
+    "resource_id" = module.activity-tracker_instance.tracker_guid
+    "is_resource" = "true"
+    "resource_name" = var.observability_instance_name
+    }
+}
+
+output "at_instance" {
+  value = {
+    "resource_id" = module.activity-tracker_instance.tracker_guid
+    "id" = module.activity-tracker_instance.tracker_guid
+    "resource_name" = var.observability_instance_name
+    }
 }
