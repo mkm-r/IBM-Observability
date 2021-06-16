@@ -64,7 +64,7 @@ output "logdna_instance_id" {
 }
 
 
-output "at_instance_id" {
+output "activity_tracker_instance_id" {
   value = module.activity-tracker_instance.tracker_guid
 }
 
