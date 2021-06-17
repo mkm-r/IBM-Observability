@@ -60,12 +60,12 @@ variable "output_at_instance_id" {
 }
 
 output "logdna_instance_id" {
-  value = module.logdna_instance.logdna_instance_guid
+  value = module.logdna_instance.logdna_instance_id
 }
 
 
 output "activity_tracker_instance_id" {
-  value = module.activity-tracker_instance.tracker_guid
+  value = module.activity-tracker_instance.tracker_id
 }
 
 output "logdna_instance" {
